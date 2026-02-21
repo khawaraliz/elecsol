@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elecsol — Electrical & Solar Solutions</title>
+  <meta name="description" content="Elecsol provides electrical, solar, and automation solutions. Reliable services, quality installations, and expert support." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --muted:#a7b0d6;
+      --text:#eaf0ff;
+      --accent:#5eead4;
+      --accent2:#60a5fa;
+      --border:rgba(255,255,255,.10);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(900px 500px at 10% 0%, rgba(96,165,250,.18), transparent 55%),
+      radial-gradient(800px 500px at 100% 20%, rgba(94,234,212,.16), transparent 55%),
+      var(--bg); color:var(--text);}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(11,16,32,.7); backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; gap:10px; align-items:center; font-weight:800; letter-spacing:.4px}
+    .logo{
+      width:36px;height:36px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      box-shadow:var(--shadow);
+    }
+    .links{display:flex; gap:16px; align-items:center}
+    .links a{color:var(--muted); font-weight:600; font-size:14px; padding:8px 10px; border-radius:10px}
+    .links a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:10px 14px; border-radius:12px; border:1px solid var(--border);
+      background:linear-gradient(135deg, rgba(94,234,212,.14), rgba(96,165,250,.14));
+      box-shadow:var(--shadow); font-weight:700;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .hero{padding:64px 0 24px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:22px; align-items:stretch}
+    .h1{font-size:44px; line-height:1.05; margin:0 0 12px}
+    .sub{color:var(--muted); font-size:16px; line-height:1.6; margin:0 0 18px}
+    .pill-row{display:flex; flex-wrap:wrap; gap:10px; margin:18px 0}
+    .pill{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.05);
+      padding:8px 12px; border-radius:999px; font-size:13px; color:var(--muted);
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card-pad{padding:18px}
+    .stats{display:grid; grid-template-columns: repeat(3,1fr); gap:12px; margin-top:10px}
+    .stat{padding:14px; border-radius:16px; border:1px solid var(--border); background:rgba(255,255,255,.04)}
+    .stat b{font-size:18px}
+    .stat div{color:var(--muted); font-size:13px; margin-top:4px}
+    .section{padding:34px 0}
+    .section h2{margin:0 0 10px; font-size:26px}
+    .section p{margin:0 0 18px; color:var(--muted); line-height:1.7}
+    .grid3{display:grid; grid-template-columns: repeat(3,1fr); gap:14px}
+    .svc h3{margin:10px 0 6px; font-size:18px}
+    .svc p{margin:0; color:var(--muted); font-size:14px; line-height:1.6}
+    .icon{
+      width:40px;height:40px;border-radius:14px;
+      display:grid; place-items:center;
+      background:rgba(94,234,212,.12);
+      border:1px solid rgba(94,234,212,.22);
+    }
+    .icon svg{width:20px;height:20px; opacity:.95}
+    .contact-grid{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 6px}
+    input, textarea{
+      width:100%; padding:12px 12px; border-radius:14px;
+      border:1px solid var(--border); background:rgba(0,0,0,.18); color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .note{font-size:13px; color:var(--muted); margin-top:10px}
+    footer{padding:26px 0; border-top:1px solid var(--border); color:var(--muted)}
+    .small{font-size:13px}
+    .mobile-toggle{display:none}
+    @media (max-width: 920px){
+      .hero-grid{grid-template-columns: 1fr; }
+      .grid3{grid-template-columns: 1fr}
+      .stats{grid-template-columns: 1fr}
+      .contact-grid{grid-template-columns:1fr}
+      .links{display:none}
+      .mobile-toggle{display:inline-flex}
+      .links.open{
+        display:flex; flex-direction:column; align-items:flex-start;
+        gap:8px; padding:0 0 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            Elecsol
+            <div style="font-size:12px;color:var(--muted);font-weight:600;margin-top:2px;">Electrical • Solar • Automation</div>
+          </div>
+        </div>
+
+        <button class="btn mobile-toggle" id="menuBtn" type="button" aria-label="Toggle menu">Menu</button>
+
+        <nav class="links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact" class="btn">Get a Quote</a>
+        </nav>
+      </div>
+      <nav class="links" id="navLinksMobile"></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <h1 class="h1">Reliable Electrical & Solar Solutions for Homes and Industry</h1>
+            <p class="sub">
+              Elecsol helps you install, upgrade, and maintain electrical systems, solar power solutions,
+              and automation setups — with safety, quality, and clean workmanship.
+            </p>
+
+            <div class="pill-row">
+              <div class="pill">Residential & Commercial</div>
+              <div class="pill">Solar Installation</div>
+              <div class="pill">Industrial Panels</div>
+              <div class="pill">Maintenance & Troubleshooting</div>
+            </div>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:10px;">
+              <a class="btn" href="#contact">Request a Quote</a>
+              <a class="btn" href="#services" style="background:rgba(255,255,255,.06)">View Services</a>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <b>Fast Response</b>
+                <div>Quick site visit & support</div>
+              </div>
+              <div class="stat">
+                <b>Quality Work</b>
+                <div>Safety-first installations</div>
+              </div>
+              <div class="stat">
+                <b>Fair Pricing</b>
+                <div>Transparent estimates</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-pad">
+              <h2 style="margin:0 0 10px;font-size:20px;">What we do</h2>
+              <p style="margin:0 0 14px;color:var(--muted);line-height:1.65">
+                From wiring and DB/panel upgrades to solar net metering support and industrial automation —
+                we deliver complete end-to-end service.
+              </p>
+
+              <div style="display:grid; gap:10px;">
+                <div style="padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.04)">
+                  ✅ Electrical Installation & Repair
+                </div>
+                <div style="padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.04)">
+                  ✅ Solar System Design & Installation
+                </div>
+                <div style="padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.04)">
+                  ✅ Panels, ATS/AMF, UPS & Inverters
+                </div>
+                <div style="padding:12px;border-radius:16px;border:1px solid var(--border);background:rgba(255,255,255,.04)">
+                  ✅ Preventive Maintenance Contracts
+                </div>
+              </div>
+
+              <p class="note">
+                Tip: Edit the text, phone, and email below to match your business details.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <h2>Services</h2>
+        <p>Pick a service, request a quote, and we’ll guide you from planning to installation and support.</p>
+
+        <div class="grid3">
+          <div class="card card-pad svc">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l4 8H8l4-8z"/><path d="M6 10h12l-6 12-6-12z"/>
+              </svg>
+            </div>
+            <h3>Electrical Works</h3>
+            <p>Wiring, DB upgrades, breakers, load balancing, earthing, troubleshooting & repair.</p>
+          </div>
+
+          <div class="card card-pad svc">
+            <div class="icon" aria-hidden="true" style="background:rgba(96,165,250,.12);border-color:rgba(96,165,250,.22)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12h18"/><path d="M12 3v18"/><path d="M5 5l14 14"/><path d="M19 5L5 19"/>
+              </svg>
+            </div>
+            <h3>Solar Solutions</h3>
+            <p>System sizing, installation, inverter setup, battery options, and maintenance.</p>
+          </div>
+
+          <div class="card card-pad svc">
+            <div class="icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/>
+              </svg>
+            </div>
+            <h3>Panels & Automation</h3>
+            <p>Industrial panels, ATS/AMF, VFD basics, sensors, controls, and automation support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <p>Replace these with your real work (photos + short details). You can add more cards easily.</p>
+
+        <div class="grid3">
+          <div class="card card-pad">
+            <h3 style="margin:0 0 6px;">Solar Installation</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.6">
+              5kW/10kW residential or commercial setup, inverter configuration, clean cabling & commissioning.
+            </p>
+          </div>
+          <div class="card card-pad">
+            <h3 style="margin:0 0 6px;">DB / Panel Upgrade</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.6">
+              Breaker replacement, load separation, safety labeling, and improved reliability.
+            </p>
+          </div>
+          <div class="card card-pad">
+            <h3 style="margin:0 0 6px;">Industrial Maintenance</h3>
+            <p style="margin:0;color:var(--muted);line-height:1.6">
+              Routine checks, fault diagnosis, motor/inverter support, and preventive maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <h2>About Elecsol</h2>
+        <p>
+          Elecsol is focused on safe electrical practices, reliable solar systems, and practical automation support.
+          We believe in clear communication, honest estimates, and quality work.
+        </p>
+
+        <div class="card card-pad">
+          <h3 style="margin:0 0 10px;">Why choose us</h3>
+          <ul style="margin:0; padding-left:18px; color:var(--muted); line-height:1.8">
+            <li>Safety-first installations</li>
+            <li>Neat cabling & proper labeling</li>
+            <li>Clear documentation and handover</li>
+            <li>Maintenance and support available</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>Send your requirement and we’ll reply with an estimate. (This form uses email link — no backend needed.)</p>
+
+        <div class="contact-grid">
+          <div class="card card-pad">
+            <h3 style="margin:0 0 10px;">Business Details</h3>
+            <p style="margin:0 0 10px;color:var(--muted);line-height:1.7">
+              <b style="color:var(--text)">Email:</b> <a href="mailto:elecsol.pak@gmail.com">elecsol.pak@gmail.com</a><br/>
+              <b style="color:var(--text)">Phone/WhatsApp:</b> <a href="https://wa.me/" target="_blank" rel="noopener">Add your WhatsApp link</a><br/>
+              <b style="color:var(--text)">Location:</b> Pakistan (update this)
+            </p>
+            <div class="note">Update WhatsApp link: replace <code>https://wa.me/</code> with your number like <code>https://wa.me/923001234567</code></div>
+          </div>
+
+          <div class="card card-pad">
+            <form id="quoteForm">
+              <div style="display:grid; gap:10px;">
+                <div>
+                  <label for="name">Name</label>
+                  <input id="name" name="name" placeholder="Your name" required />
+                </div>
+                <div>
+                  <label for="phone">Phone</label>
+                  <input id="phone" name="phone" placeholder="Your contact number" />
+                </div>
+                <div>
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us what you need (solar size, location, issue, etc.)" required></textarea>
+                </div>
+                <button class="btn" type="submit">Send Request</button>
+              </div>
+              <div class="note">This opens your email app with the message prefilled.</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container small">
+      © <span id="year"></span> Elecsol. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu (simple)
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    const navLinksMobile = document.getElementById('navLinksMobile');
+
+    // Clone desktop links into mobile container
+    navLinksMobile.innerHTML = navLinks.innerHTML;
+    navLinksMobile.className = "links";
+
+    menuBtn?.addEventListener('click', () => {
+      navLinksMobile.classList.toggle('open');
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Contact form -> mailto (no backend needed)
+    const form = document.getElementById('quoteForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const msg = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent(`Quote Request — ${name || 'Elecsol Website'}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone: ${phone}\n\nRequirement:\n${msg}\n`
+      );
+
+      window.location.href = `mailto:elecsol.pak@gmail.com?subject=${subject}&body=${body}`;
+    });
+  </script>
+</body>
+</html>
