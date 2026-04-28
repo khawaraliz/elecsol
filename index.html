@@ -84,8 +84,8 @@
       background: var(--primary);
       color: var(--white);
     }
-    .section{
-      padding: 80px 0;
+    .section {
+      padding: 40px 0;
     }
     .section-title{
       font-size: 36px;
@@ -361,6 +361,53 @@
       text-align: center;
       opacity: 0.7;
     }
+    
+    /* Dropdown Menu Styles */
+    .dropdown {
+      position: relative;
+    }
+    
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--white);
+      min-width: 250px;
+      box-shadow: var(--shadow-lg);
+      border-radius: var(--radius);
+      z-index: 1000;
+      padding: 10px 0;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    
+    .dropdown-menu li {
+      list-style: none;
+    }
+    
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--gray-dark);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+    
+    .dropdown-menu a:hover {
+      background: var(--light);
+      color: var(--primary);
+      padding-left: 25px;
+    }
+    
+    .dropdown-toggle {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
     /* Mobile responsive adjustments */
     @media (max-width: 768px) {
       .grid {
@@ -380,7 +427,7 @@
       }
       
       .section {
-        padding: 40px 0;
+        padding: 30px 0;
       }
       
       .section-title {
@@ -490,7 +537,7 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <img src="./assets/logo.png" alt="ELECSOL Logo" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+            <img src="./assets/logo.png" alt="ELECSOL Logo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 20px rgba(0, 169, 157, 0.4); border: 4px solid var(--primary); background: white; padding: 3px;">
             <div class="logo-text">
               <h1>ELECSOL ENGINEERING SERVICES</h1>
               <p>Infinite Solutions | Trusted Engineering</p>
@@ -499,11 +546,23 @@
           <nav>
             <ul>
               <li><a href="#home">Home</a></li>
-              <li><a href="#services">Our Services</a></li>
+              <li class="dropdown">
+                <a href="#services" class="dropdown-toggle">Our Services ▼</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#solar">☀️ Solar Energy Solutions</a></li>
+                  <li><a href="#mechanical">⚙️ Mechanical Fabrication</a></li>
+                  <li><a href="#scientific">🔬 Scientific Equipment</a></li>
+                  <li><a href="#control">🎛️ Control Systems & DB</a></li>
+                  <li><a href="#motors">⚡ Motors & Pumps</a></li>
+                  <li><a href="#consulting">📊 Consulting Services</a></li>
+                </ul>
+              </li>
               <li><a href="#about">About Us</a></li>
               <li><a href="#projects">Projects</a></li>
               <li><a href="#team">Team</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
               <li><a href="#contact" class="btn btn-primary">Request Audit & Quote</a></li>
+              <li><a href="#company-profile" class="btn btn-outline" style="margin-left: 10px;">📄 Company Profile</a></li>
             </ul>
           </nav>
         </div>
@@ -513,22 +572,52 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
-            <div>
-              <h1>Professional Engineering Solutions for a Sustainable Future</h1>
-              <p>
+      <div class="hero-banner" style="background: linear-gradient(135deg, rgba(0, 169, 157, 0.9), rgba(52, 152, 219, 0.9)), url('./assets/solar structure.png') center/cover; position: relative; min-height: 400px; display: flex; align-items: center;">
+        <div class="container">
+          <div class="hero-content" style="position: relative; z-index: 2;">
+            <div style="max-width: 800px;">
+              <h1 style="font-size: 48px; font-weight: 700; color: white; margin-bottom: 20px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Professional Engineering Solutions for a Sustainable Future</h1>
+              <p style="font-size: 20px; color: white; margin-bottom: 30px; line-height: 1.6; text-shadow: 0 1px 2px rgba(0,0,0,0.3);">
                 ELECSOL provides comprehensive electrical, solar, and mechanical engineering services 
                 with a commitment to quality, safety, and innovation.
               </p>
               <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                <a href="#contact" class="btn btn-primary">Get a Quote</a>
-                <a href="#services" class="btn btn-outline">Our Services</a>
+                <a href="#contact" class="btn btn-primary" style="background: white; color: var(--primary); border: 2px solid white; padding: 12px 30px; font-weight: 600; text-decoration: none; border-radius: 25px; transition: all 0.3s ease;">Get a Quote</a>
+                <a href="#services" class="btn btn-outline" style="background: transparent; color: white; border: 2px solid white; padding: 12px 30px; font-weight: 600; text-decoration: none; border-radius: 25px; transition: all 0.3s ease;">Our Services</a>
               </div>
             </div>
-            <div>
-              <img src="./assets/soren-h-1PKAYeA_nZ4-unsplash.jpg" alt="Engineering Services" style="width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+      
+      <div style="background: var(--light); padding: 60px 0;">
+        <div class="container">
+          <div style="text-align: center; margin-bottom: 40px;">
+            <h2 style="font-size: 32px; font-weight: 700; color: var(--secondary); margin-bottom: 15px;">Why Choose ELECSOL?</h2>
+            <p style="color: var(--gray); font-size: 18px; max-width: 600px; margin: 0 auto;">Trusted engineering excellence with proven results</p>
+          </div>
+          
+          <div class="grid grid-3">
+            <div class="card" style="text-align: center; padding: 30px;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 28px; color: white;">⚡</span>
+              </div>
+              <h3 style="color: var(--primary); margin-bottom: 15px;">Expert Engineering</h3>
+              <p style="color: var(--gray); line-height: 1.6;">Certified engineers with decades of experience in electrical and mechanical systems.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 30px;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 28px; color: white;">☀️</span>
+              </div>
+              <h3 style="color: var(--accent); margin-bottom: 15px;">Solar Solutions</h3>
+              <p style="color: var(--gray); line-height: 1.6;">Complete solar energy systems from design to installation and maintenance.</p>
+            </div>
+            <div class="card" style="text-align: center; padding: 30px;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary), #34495e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 28px; color: white;">🔧</span>
+              </div>
+              <h3 style="color: var(--secondary); margin-bottom: 15px;">Quality Service</h3>
+              <p style="color: var(--gray); line-height: 1.6;">Committed to excellence in every project with guaranteed satisfaction.</p>
             </div>
           </div>
         </div>
@@ -641,40 +730,6 @@
               <p style="color: var(--gray); line-height: 1.6; font-size: 15px; text-align: center;">
                 To become a leading diversified engineering solutions provider, delivering complete services through innovation, quality, and trust.
               </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" style="background: var(--light);">
-      <div class="container">
-        <h2 class="section-title">Company Profile</h2>
-        <p class="section-subtitle">
-          Download our comprehensive company profile to learn more about our capabilities
-        </p>
-
-        <div style="max-width: 500px; margin: 0 auto;">
-          <div class="card">
-            <div class="card-body" style="text-align: center;">
-              <div style="width: 80px; height: 80px; margin: 0 auto 20px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <span style="font-size: 40px; color: white; font-weight: bold;">📄</span>
-              </div>
-              
-              <h3 style="margin-bottom: 15px; color: var(--secondary);">ELECSOL Company Profile</h3>
-              
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 25px;">
-                Detailed information about our engineering services, certifications, project portfolio, and team expertise.
-              </p>
-
-              <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                <a href="./company-profile.pdf" class="btn btn-primary" style="text-decoration: none;" download="ELECSOL-Company-Profile.pdf">
-                  📥 Download PDF
-                </a>
-                <a href="#contact" class="btn btn-outline" style="text-decoration: none;">
-                  👁 Request Info
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -689,15 +744,15 @@
         </p>
 
         <!-- Solar Services -->
-        <div style="margin-bottom: 60px;">
-          <h3 style="text-align: center; font-size: 28px; color: var(--primary); margin-bottom: 40px; position: relative;">
+        <div style="margin-bottom: 20px;" id="solar">
+          <h3 style="text-align: center; font-size: 28px; color: var(--primary); margin-bottom: 20px; position: relative;">
             <span style="background: var(--white); padding: 0 20px;">☀️ SOLAR ENERGY SOLUTIONS</span>
             <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--gray-light); z-index: -1;"></div>
           </h3>
           <div class="grid grid-3">
             <div class="card">
               <div class="card-body">
-                <img src="./assets/soren-h-1PKAYeA_nZ4-unsplash.jpg" alt="Solar Installation" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/solar structure.png" alt="Solar Installation" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark));">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="12" cy="12" r="5"/>
@@ -749,7 +804,7 @@
         </div>
 
         <!-- Mechanical Fabrication -->
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 40px;" id="mechanical">
           <h3 style="text-align: center; font-size: 28px; color: var(--secondary); margin-bottom: 40px; position: relative;">
             <span style="background: var(--white); padding: 0 20px;">⚙️ MECHANICAL FABRICATION WORKS</span>
             <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--gray-light); z-index: -1;"></div>
@@ -757,7 +812,7 @@
           <div class="grid grid-3">
             <div class="card">
               <div class="card-body">
-                <img src="./assets/soren-h-1PKAYeA_nZ4-unsplash.jpg" alt="Mechanical Workshop" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/solar structure.png" alt="Mechanical Workshop" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--secondary), #34495e);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
@@ -771,7 +826,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <img src="./assets/site Survey.jpg" alt="Custom Fabrication" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/mechanical fabrication work.png" alt="Custom Fabrication" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--secondary), #34495e);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
@@ -785,7 +840,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <img src="./assets/evgeniy-alyoshin-2ASQyjafflo-unsplash.jpg" alt="Industrial Equipment" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/mechanical fabrication work.png" alt="Industrial Equipment" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--secondary), #34495e);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
@@ -801,7 +856,7 @@
         </div>
 
         <!-- Scientific Equipment -->
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 40px;" id="scientific">
           <h3 style="text-align: center; font-size: 28px; color: var(--accent); margin-bottom: 40px; position: relative;">
             <span style="background: var(--white); padding: 0 20px;">🔬 SCIENTIFIC EQUIPMENT SUPPLIER</span>
             <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--gray-light); z-index: -1;"></div>
@@ -857,7 +912,7 @@
         </div>
 
         <!-- Control Systems & DB Equipment -->
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 40px;" id="control">
           <h3 style="text-align: center; font-size: 28px; color: var(--primary-dark); margin-bottom: 40px; position: relative;">
             <span style="background: var(--white); padding: 0 20px;">🎛️ CONTROL SYSTEMS & DB EQUIPMENT</span>
             <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--gray-light); z-index: -1;"></div>
@@ -865,7 +920,7 @@
           <div class="grid grid-3">
             <div class="card">
               <div class="card-body">
-                <img src="./assets/site Survey.jpg" alt="Control Panel" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/control system.JPG" alt="Control Panel" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--primary-dark), #006666);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -881,7 +936,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <img src="./assets/fire pump.jfif" alt="DB Panel" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/DB .jpg" alt="DB Panel" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--primary-dark), #006666);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M4 6h16M4 12h16M4 18h16"/>
@@ -895,7 +950,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <img src="./assets/water filteration.jpg" alt="Electrical Equipment" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
+                <img src="./assets/ELECTRICAL Equipment.png" alt="Electrical Equipment" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--primary-dark), #006666);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -911,7 +966,7 @@
         </div>
 
         <!-- Motors & Pumps -->
-        <div style="margin-bottom: 60px;">
+        <div style="margin-bottom: 40px;" id="motors">
           <h3 style="text-align: center; font-size: 28px; color: var(--gray-dark); margin-bottom: 40px; position: relative;">
             <span style="background: var(--white); padding: 0 20px;">⚡ MOTORS & PUMPS SERVICES</span>
             <div style="position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: var(--gray-light); z-index: -1;"></div>
@@ -1013,21 +1068,320 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Company Profile CTA -->
-        <div style="text-align: center; margin-top: 60px; padding: 40px 20px; background: linear-gradient(135deg, rgba(0, 169, 157, 0.1), rgba(52, 152, 219, 0.1)); border-radius: var(--radius);">
-          <h3 style="font-size: 28px; color: var(--secondary); margin-bottom: 15px;">Want to Know More About Us?</h3>
-          <p style="color: var(--gray); margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
-            Download our comprehensive company profile to learn about our certifications, project portfolio, and team expertise.
-          </p>
-          <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-            <a href="./company-profile.pdf" class="btn btn-primary" style="text-decoration: none;" download="ELECSOL-Company-Profile.pdf">
-              📄 Download Company Profile
-            </a>
-            <a href="#contact" class="btn btn-outline" style="text-decoration: none;">
-              📞 Contact Us
-            </a>
+    <section class="section" style="background: var(--light);">
+      <div class="container">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">
+          What our valued clients say about our engineering services and commitment
+        </p>
+
+        <div class="grid grid-2">
+          <div class="testimonial-card" style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <span style="font-size: 24px; color: white;">📰</span>
+              </div>
+              <div>
+                <h4 style="margin: 0; color: var(--secondary);">Mr. Jallal ud Din</h4>
+                <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Ex. Bureau Chief, Khabrian Newspaper</p>
+              </div>
+            </div>
+            <div style="font-style: italic; color: var(--gray-dark); line-height: 1.6; margin-bottom: 15px;">
+              "ELECSOL has demonstrated exceptional professionalism and technical expertise in all our engineering projects. Their commitment to quality and timely delivery has made them our trusted engineering partner."
+            </div>
+            <div style="display: flex; gap: 1px; justify-content: flex-end;">
+              <span style="color: var(--primary);">⭐⭐⭐⭐⭐</span>
+            </div>
           </div>
+
+          <div class="testimonial-card" style="background: var(--white); padding: 30px; border-radius: var(--radius); box-shadow: var(--shadow);">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+              <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                <span style="font-size: 24px; color: white;">🇺🇸</span>
+              </div>
+              <div>
+                <h4 style="margin: 0; color: var(--secondary);">Mr. Hassam Karamat</h4>
+                <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">USA</p>
+              </div>
+            </div>
+            <div style="font-style: italic; color: var(--gray-dark); line-height: 1.6; margin-bottom: 15px;">
+              "The engineering solutions provided by ELECSOL exceeded our expectations. Their innovative approach and attention to detail in solar and mechanical systems is truly commendable."
+            </div>
+            <div style="display: flex; gap: 1px; justify-content: flex-end;">
+              <span style="color: var(--primary);">⭐⭐⭐⭐⭐</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <p style="color: var(--gray); font-style: italic;">
+            Trusted by industry leaders and media professionals for engineering excellence
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--light);">
+      <div class="container">
+        <h2 class="section-title">Our Happy Customers</h2>
+        <p class="section-subtitle">
+          Proud to serve leading organizations across various industries
+        </p>
+
+        <div class="grid grid-3">
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">🏭</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Textile Industry</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Major textile manufacturers trust us for their electrical and mechanical engineering needs</p>
+          </div>
+
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">💊</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Pharmaceutical</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Providing critical engineering solutions for pharmaceutical plants and facilities</p>
+          </div>
+
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary), #34495e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">🏢</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Commercial</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Serving commercial buildings with comprehensive electrical and solar solutions</p>
+          </div>
+
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--accent)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">🔬</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Educational Institutions</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Engineering solutions for universities and educational facilities</p>
+          </div>
+
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--gray-dark), #2c3e50); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">🏗️</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Industrial</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Heavy industry clients rely on our expertise for complex engineering projects</p>
+          </div>
+
+          <div class="customer-card" style="background: var(--white); padding: 25px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center;">
+            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-dark), #006666); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+              <span style="font-size: 24px; color: white;">🌾</span>
+            </div>
+            <h4 style="color: var(--secondary); margin-bottom: 10px;">Agriculture</h4>
+            <p style="color: var(--gray); font-size: 14px; line-height: 1.6;">Solar and electrical solutions for agricultural and fisheries sectors</p>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <p style="color: var(--gray); font-style: italic;">
+            50+ satisfied clients across multiple industries
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--white);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 style="font-size: 28px; font-weight: 700; color: var(--secondary); margin-bottom: 15px;">Trusted by Leading Organizations</h2>
+          <p style="color: var(--gray);">Proud partners in engineering excellence</p>
+        </div>
+
+        <div style="position: relative; overflow: hidden; padding: 40px 0;">
+          <div class="logo-slider" style="display: flex; animation: slide 15s linear infinite; width: fit-content;">
+            <!-- First set of logos -->
+            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
+              <div style="text-align: center;">
+                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
+              </div>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
+              <div style="text-align: center;">
+                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <style>
+          @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          
+          .logo-slider:hover img {
+            filter: grayscale(0%) !important;
+            opacity: 1 !important;
+            transform: scale(1.1);
+          }
+        </style>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">
+          Showcasing our successful engineering projects and installations
+        </p>
+
+        <div class="grid grid-2">
+          <div class="project-card" style="background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden;">
+            <img src="./assets/PROJECT SOLAR.jfif" alt="10 KW Hybrid System" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="font-size: 24px;">☀️</span>
+                <h3 style="margin: 0; color: var(--primary);">10 KW Hybrid Solar System</h3>
+              </div>
+              
+              <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--light); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">HYBRID SYSTEM</span>
+                <span style="background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">10 KW CAPACITY</span>
+                <span style="background: var(--light); color: var(--gray-dark); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">COMPLETED</span>
+              </div>
+
+              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
+                Complete installation of a 10 KW hybrid solar system with battery backup, providing reliable power generation and energy independence for our client.
+              </p>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">System Type:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">Grid-tied with Battery Backup</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Location:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">Faisalabad, Pakistan</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Completion:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">2024</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Client Type:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">Commercial</p>
+                </div>
+              </div>
+
+              <div style="border-top: 1px solid var(--gray-light); padding-top: 20px;">
+                <h4 style="color: var(--secondary); margin-bottom: 10px; font-size: 16px;">Key Features</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> High-efficiency solar panels
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Advanced hybrid inverter
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Battery storage system
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Net metering integration
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" style="background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden;">
+            <img src="./assets/Fire pump 2.jfif" alt="AERZEN Blower Overhauling" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="font-size: 24px;">🔧</span>
+                <h3 style="margin: 0; color: var(--secondary);">Major Overhauling of AERZEN Blower</h3>
+              </div>
+              
+              <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--light); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AERZEN GERMANY</span>
+                <span style="background: var(--light); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">GM50L MODEL</span>
+                <span style="background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">TEXTILE INDUSTRY</span>
+                <span style="background: var(--light); color: var(--gray-dark); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">MAJOR OVERHAULING</span>
+              </div>
+
+              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
+                Complete major overhauling of AERZEN Germany GM50L blower for a reputed textile company, including comprehensive disassembly, inspection, repair, and reassembly with precision engineering.
+              </p>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Equipment:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">AERZEN GM50L Blower</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Client:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">Reputed Textile Company</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Manufacturer:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">AERZEN Germany</p>
+                </div>
+                <div>
+                  <strong style="color: var(--secondary); font-size: 14px;">Service Type:</strong>
+                  <p style="margin: 5px 0; color: var(--gray); font-size: 13px;">Major Overhauling</p>
+                </div>
+              </div>
+
+              <div style="border-top: 1px solid var(--gray-light); padding-top: 20px;">
+                <h4 style="color: var(--secondary); margin-bottom: 10px; font-size: 16px;">Overhauling Scope</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Complete disassembly and inspection
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Bearing replacement and alignment
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Impeller balancing and repair
+                  </li>
+                  <li style="display: flex; align-items: center; gap: 8px; color: var(--gray); font-size: 14px;">
+                    <span style="color: var(--primary);">✓</span> Performance testing and certification
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <p style="color: var(--gray); font-style: italic;">
+            Transform your ideas into reality with our expert engineering solutions
+          </p>
         </div>
       </div>
     </section>
@@ -1140,16 +1494,19 @@
           </div>
 
           <div class="card">
-            <div style="height: 200px; background: linear-gradient(135deg, var(--secondary), #34495e); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600;">
-              Maintenance
-            </div>
+            <img src="./assets/preventive maintenance of Blower AERZEN.jfif" alt="Aerzen Blower Preventive Maintenance" style="width: 100%; height: 200px; object-fit: cover;">
             <div class="card-body">
               <h3 style="margin-bottom: 15px;">Preventive Maintenance Program</h3>
               <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
                 Annual maintenance contract for pharmaceutical plant including electrical audits, 
                 equipment testing, and compliance documentation.
               </p>
-              <a href="#" class="btn btn-outline" style="width: 100%;">Explore Case Study</a>
+              <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--light); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AERZEN BLOWER</span>
+                <span style="background: var(--light); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PREVENTIVE MAINTENANCE</span>
+                <span style="background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PHARMACEUTICAL</span>
+              </div>
+              <a href="#contact" class="btn btn-outline" style="width: 100%;">Request Maintenance Service</a>
             </div>
           </div>
         </div>
