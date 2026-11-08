@@ -574,6 +574,49 @@
         font-weight: 600;
       }
     }
+    /* Header & hero polish */
+    .header-top{ padding: 6px 0; font-size: 13px; }
+    .header-main{ padding: 10px 0; }
+    .logo{ gap: 12px; }
+    .logo-img{ height: 64px; width: auto; display: block; }
+    .logo-text h1{ font-size: 19px; line-height: 1.2; letter-spacing: 0.3px; white-space: nowrap; }
+    .logo-text p{ font-size: 13px; margin-top: 2px; }
+    nav ul{ gap: 4px; }
+    nav a{ padding: 8px 10px; font-size: 13px; white-space: nowrap; }
+    nav a.btn-primary{ padding: 10px 18px; white-space: nowrap; }
+
+    .hero-media{ padding: 0; background: var(--white); }
+    .hero-media::before{ display: none; }
+    .hero-banner{ position: relative; }
+    .hero-video{ display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; }
+    .hero-actions{ display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; padding: 20px 16px; background: var(--light); }
+    .hero-btn{ padding: 13px 30px; font-size: 15px; font-weight: 600; border-radius: 8px; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.18); }
+    .hero-btn-secondary{ background: var(--secondary); color: var(--white); border: none; }
+    .hero-btn-secondary:hover{ background: var(--gray-dark); color: var(--white); }
+
+    @media (max-width: 1200px){
+      .logo-text p{ display: none; }
+      .logo-text h1{ font-size: 18px; }
+    }
+
+    @media (max-width: 768px){
+      .header-top-content{ flex-direction: row; justify-content: center; padding: 0; }
+      .header-top-content > div:last-child{ display: none; }
+      .header-main{ padding: 8px 0; }
+      .header-content{ gap: 8px; padding: 0; }
+      .logo{ flex-direction: row; text-align: left; gap: 10px; }
+      .logo-img{ height: 44px; }
+      .logo-text h1{ font-size: 16px; white-space: normal; }
+      nav{ width: 100%; }
+      nav ul{ flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+      nav ul::-webkit-scrollbar{ display: none; }
+      nav li{ flex: 0 0 auto; min-width: 0; }
+      nav a{ overflow: visible; text-overflow: clip; padding: 6px 10px; font-size: 12px; }
+      nav a.btn-primary{ padding: 6px 12px; }
+      .dropdown-menu{ display: none !important; }
+      .hero-actions{ padding: 16px; }
+      .hero-btn{ padding: 11px 22px; font-size: 14px; }
+    }
   </style>
 </head>
 
@@ -591,7 +634,7 @@
       <div class="container">
         <div class="header-content">
           <div class="logo">
-            <img src="./assets/logo.png" alt="ELECSOL Logo" style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover; box-shadow: 0 6px 20px rgba(0, 169, 157, 0.4); border: 4px solid var(--primary); background: white; padding: 3px;">
+            <img src="./assets/logo-header.png" alt="ELECSOL Engineering logo" class="logo-img" width="303" height="240">
             <div class="logo-text">
               <h1>ELECSOL ENGINEERING SERVICES</h1>
               <p>Infinite Solutions | Trusted Engineering</p>
@@ -601,7 +644,7 @@
             <ul>
               <li><a href="#home">Home</a></li>
               <li class="dropdown">
-                <a href="#services" class="dropdown-toggle">Our Services ▼</a>
+                <a href="#services" class="dropdown-toggle">Our Services</a>
                 <ul class="dropdown-menu">
                   <li><a href="#solar">☀️ Solar Energy Solutions</a></li>
                   <li><a href="#mechanical">⚙️ Mechanical Fabrication</a></li>
@@ -612,7 +655,7 @@
                 </ul>
               </li>
               <li class="dropdown">
-                <a href="#about" class="dropdown-toggle">About Us ▼</a>
+                <a href="#about" class="dropdown-toggle">About Us</a>
                 <ul class="dropdown-menu">
                   <li><a href="#about">🏢 About Us</a></li>
                   <li><a href="#elecsol-company-profile">📄 Company Profile</a></li>
@@ -621,7 +664,7 @@
               <li><a href="#projects">Projects</a></li>
               <li><a href="#team">Team</a></li>
               <li><a href="#client-testimonials">Testimonials</a></li>
-              <li><a href="#contact" class="btn btn-primary">Request Audit & Quote</a></li>
+              <li><a href="#contact" class="btn btn-primary">Get a Quote</a></li>
             </ul>
           </nav>
         </div>
@@ -630,18 +673,14 @@
   </header>
 
   <main>
-    <section class="hero" id="home">
-      <div class="hero-banner" style="position: relative; min-height: 500px; width: 100%; display: flex; align-items: center; overflow: hidden;">
-        <img src="./assets/Banner.gif" alt="ELECSOL Engineering Services Banner" style="width: 100%; height: 100%; object-fit: contain; object-position: center;">
-        <div class="container" style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 3;">
-          <div class="hero-content">
-            <div style="text-align: center;">
-              <div style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
-                <a href="#contact" class="btn btn-primary" style="background: var(--primary); color: white; border: none; padding: 15px 35px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; font-size: 16px;">Get a Quote</a>
-                <a href="#services" class="btn btn-outline" style="background: transparent; color: white; border: 2px solid white; padding: 15px 35px; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s ease; font-size: 16px;">Our Services</a>
-              </div>
-            </div>
-          </div>
+    <section class="hero hero-media" id="home">
+      <div class="hero-banner">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./assets/banner-poster.jpg" width="1600" height="800" aria-label="ELECSOL Engineering Services banner">
+          <source src="./assets/banner.mp4" type="video/mp4">
+        </video>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary hero-btn">Get a Quote</a>
+          <a href="#services" class="btn hero-btn hero-btn-secondary">Our Services</a>
         </div>
       </div>
     </section>
