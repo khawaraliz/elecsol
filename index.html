@@ -624,6 +624,14 @@
       .footer-content{ grid-template-columns: 1fr; gap: 28px; }
       .footer-section h3{ overflow-wrap: anywhere; }
     }
+    .mobile-cta{ display: none; }
+    @media (max-width: 768px){
+      .mobile-cta{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 1001; background: var(--white); box-shadow: 0 -4px 16px rgba(0,0,0,0.12); padding: 8px 8px calc(8px + env(safe-area-inset-bottom)); }
+      .mobile-cta a{ display: flex; align-items: center; justify-content: center; text-align: center; padding: 11px 4px; border-radius: 8px; background: var(--secondary); color: var(--white); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; line-height: 1.2; text-decoration: none; }
+      .mobile-cta a:first-child{ background: var(--primary); }
+      body{ padding-bottom: 72px; }
+      .whatsapp-float{ bottom: 86px !important; right: 16px !important; }
+    }
   </style>
 </head>
 
@@ -688,6 +696,7 @@
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary hero-btn">Get a Quote</a>
           <a href="#services" class="btn hero-btn hero-btn-secondary">Our Services</a>
+          <a href="./company-profile.pdf" target="_blank" rel="noopener" class="btn btn-outline hero-btn">Company Profile</a>
         </div>
       </div>
     </section>
@@ -1914,6 +1923,12 @@
       }
     });
   </script>
+
+  <div class="mobile-cta" aria-label="Quick actions">
+    <a href="#contact">Get a Quote</a>
+    <a href="#services">Our Services</a>
+    <a href="./company-profile.pdf" target="_blank" rel="noopener">Company Profile</a>
+  </div>
 
   <!-- Floating WhatsApp Button -->
   <div class="whatsapp-float" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000;">
