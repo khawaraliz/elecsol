@@ -617,6 +617,13 @@
       .hero-actions{ padding: 16px; }
       .hero-btn{ padding: 11px 22px; font-size: 14px; }
     }
+    @media (max-width: 768px){
+      .process-flow{ flex-wrap: wrap; justify-content: center; gap: 24px 12px; margin: 30px 0; }
+      .process-flow::before{ display: none; }
+      .process-step{ flex: 0 0 calc(50% - 12px); }
+      .footer-content{ grid-template-columns: 1fr; gap: 28px; }
+      .footer-section h3{ overflow-wrap: anywhere; }
+    }
   </style>
 </head>
 
@@ -1045,7 +1052,7 @@
             </div>
             <div class="card">
               <div class="card-body">
-                <img src="./assets/logo.png" alt="Industrial Motors" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;" onerror="this.style.background='linear-gradient(135deg, #495057, #f8f9fa)'; this.alt='Industrial Motors - Image Coming Soon';">
+                <img src="./assets/fire pump.jfif" alt="Pump set supply" style="width: 100%; height: 150px; object-fit: cover; border-radius: var(--radius) var(--radius) 0 0; margin-bottom: 15px;">
                 <div class="icon-box" style="background: linear-gradient(135deg, var(--gray-dark), #2c3e50);">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M9 11l3 3L22 4"/>
@@ -1466,6 +1473,28 @@
               </div>
             </div>
           </div>
+          <div class="project-card" style="background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden;">
+            <img src="./assets/preventive maintenance of Blower AERZEN.jfif" alt="AERZEN blower preventive maintenance" style="width: 100%; height: 250px; object-fit: cover;">
+            <div class="card-body" style="padding: 30px;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                <span style="font-size: 24px;">🛠️</span>
+                <h3 style="margin: 0; color: var(--secondary);">Preventive Maintenance Program</h3>
+              </div>
+
+              <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
+                <span style="background: var(--light); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AERZEN BLOWER</span>
+                <span style="background: var(--light); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PREVENTIVE MAINTENANCE</span>
+                <span style="background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PHARMACEUTICAL</span>
+              </div>
+
+              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
+                Annual maintenance contract for pharmaceutical plant including electrical audits,
+                equipment testing, and compliance documentation.
+              </p>
+
+              <a href="#contact" class="btn btn-outline" style="width: 100%;">Request Maintenance Service</a>
+            </div>
+          </div>
         </div>
 
         <div style="text-align: center; margin-top: 40px;">
@@ -1542,62 +1571,6 @@
             </div>
             <div class="process-title">Continued Support</div>
             <div style="font-size: 12px; color: var(--gray);">Maintenance & service</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">
-          Showcase of our successful engineering projects across various industries
-        </p>
-
-        <div class="grid grid-3">
-          <div class="card">
-            <div style="height: 200px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600;">
-              Solar Installation
-            </div>
-            <div class="card-body">
-              <h3 style="margin-bottom: 15px;">Commercial Solar Power Plant</h3>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
-                500kW commercial solar installation with net metering, battery storage, and 
-                advanced monitoring systems for a manufacturing facility.
-              </p>
-              <a href="#" class="btn btn-outline" style="width: 100%;">Explore Case Study</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <div style="height: 200px; background: linear-gradient(135deg, var(--accent), #2980b9); display: flex; align-items: center; justify-content: center; color: white; font-size: 18px; font-weight: 600;">
-              Panel Upgrade
-            </div>
-            <div class="card-body">
-              <h3 style="margin-bottom: 15px;">Industrial Panel Upgrade</h3>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
-                Complete electrical panel upgrade for textile industry including ATS/AMF panels, 
-                load balancing, and safety compliance certification.
-              </p>
-              <a href="#" class="btn btn-outline" style="width: 100%;">Explore Case Study</a>
-            </div>
-          </div>
-
-          <div class="card">
-            <img src="./assets/preventive maintenance of Blower AERZEN.jfif" alt="Aerzen Blower Preventive Maintenance" style="width: 100%; height: 200px; object-fit: cover;">
-            <div class="card-body">
-              <h3 style="margin-bottom: 15px;">Preventive Maintenance Program</h3>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
-                Annual maintenance contract for pharmaceutical plant including electrical audits, 
-                equipment testing, and compliance documentation.
-              </p>
-              <div style="display: flex; gap: 10px; margin-bottom: 20px; flex-wrap: wrap;">
-                <span style="background: var(--light); color: var(--secondary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">AERZEN BLOWER</span>
-                <span style="background: var(--light); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PREVENTIVE MAINTENANCE</span>
-                <span style="background: var(--light); color: var(--accent); padding: 5px 12px; border-radius: 20px; font-size: 12px; font-weight: 600;">PHARMACEUTICAL</span>
-              </div>
-              <a href="#contact" class="btn btn-outline" style="width: 100%;">Request Maintenance Service</a>
-            </div>
           </div>
         </div>
       </div>
@@ -1727,82 +1700,10 @@
             </div>
           </div>
         </div>
-
-        <div style="text-align: center; margin-top: 30px;">
-          <p style="color: var(--gray); margin-bottom: 15px;">
-            <strong>To add your video:</strong> Replace <code>YOUR_VIDEO_ID</code> in the iframe src with your actual YouTube video ID
-          </p>
-          <p style="color: var(--gray); font-size: 14px;">
-            Example: For <code>https://www.youtube.com/watch?v=dQw4w9WgXcQ</code>, the ID is <code>dQw4w9WgXcQ</code>
-          </p>
-        </div>
       </div>
     </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title">Why Choose ELECSOL</h2>
-        <p class="section-subtitle">
-          Your trusted partner for engineering excellence and sustainable solutions
-        </p>
-
-        <div class="grid grid-2">
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-bottom: 20px; color: var(--primary);">Our Advantages</h3>
-              <div style="display: grid; gap: 15px;">
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Certified Engineers</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Professional engineering team with industry certifications</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Senior Industrial Leadership</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Experienced leadership with decades of industry expertise</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Specialized Utilities Oversight</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Expert management of utility systems and power infrastructure</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Dedicated Support</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">24/7 technical support and preventive maintenance services</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-bottom: 20px; color: var(--primary);">About ELECSOL</h3>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 15px;">
-                ELECSOL ENGINEERING SERVICES is a leading provider of comprehensive engineering solutions 
-                specializing in electrical systems, solar power, mechanical engineering, and utility infrastructure.
-              </p>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 15px;">
-                With years of experience serving industrial and commercial clients, we have built a reputation 
-                for delivering quality projects on time and within budget while maintaining the highest safety standards.
-              </p>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
-                Our team of certified engineers brings expertise across multiple disciplines, ensuring 
-                integrated solutions that meet the complex needs of modern industries.
-              </p>
-            </div>
-          </div>
-        </div>
-
-    <section class="section"> id="team">
+    <section class="section" id="team">
       <div class="container">
         <h2 class="section-title">Founder & CEO</h2>
         <p class="section-subtitle">
