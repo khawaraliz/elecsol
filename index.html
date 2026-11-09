@@ -334,8 +334,8 @@
     }
     .footer-content{
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
+      grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+      gap: 32px;
       margin-bottom: 30px;
     }
     .footer-section h3{
@@ -633,6 +633,79 @@
       .whatsapp-float{ bottom: 86px !important; right: 16px !important; }
       .footer-bottom{ padding-bottom: 80px; }
     }
+    /* Interlec-style layout */
+    .nav-toggle{ display: none; }
+    .btn-light-outline{ background: transparent; color: #fff; border: 2px solid #fff; }
+    .btn-light-outline:hover{ background: #fff; color: var(--secondary); }
+    .hero-slider{ position: relative; height: min(78vh, 560px); min-height: 420px; overflow: hidden; background: var(--secondary); }
+    .slide{ position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; visibility: hidden; transition: opacity .8s ease, visibility .8s; display: flex; align-items: center; }
+    .slide.active{ opacity: 1; visibility: visible; z-index: 1; }
+    .slide::before{ content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(20,33,46,.88) 0%, rgba(20,33,46,.6) 55%, rgba(20,33,46,.25) 100%); }
+    .slide-content{ position: relative; z-index: 2; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 64px; color: #fff; }
+    .slide-kicker{ color: #4fd1c5; font-weight: 700; letter-spacing: 2px; font-size: 13px; text-transform: uppercase; margin-bottom: 12px; }
+    .slide h2{ color: #fff; font-size: clamp(30px, 4.5vw, 52px); line-height: 1.15; max-width: 640px; margin-bottom: 16px; }
+    .slide p{ max-width: 560px; font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; opacity: .92; margin-bottom: 28px; }
+    .slide-actions{ display: flex; gap: 12px; flex-wrap: wrap; }
+    .slider-arrow{ position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 44px; height: 64px; border: none; background: rgba(0,0,0,.35); color: #fff; font-size: 32px; line-height: 1; cursor: pointer; }
+    .slider-arrow:hover{ background: var(--primary); }
+    .slider-arrow.prev{ left: 0; } .slider-arrow.next{ right: 0; }
+    .slider-dots{ position: absolute; bottom: 22px; left: 0; right: 0; display: flex; justify-content: center; gap: 10px; z-index: 3; }
+    .slider-dots button{ width: 10px; height: 10px; padding: 0; border: none; border-radius: 5px; background: rgba(255,255,255,.5); cursor: pointer; transition: all .3s; }
+    .slider-dots button.active{ width: 28px; background: #fff; }
+    .about-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .about-img{ width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+    .eyebrow{ color: var(--primary); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-size: 14px; margin-bottom: 10px; }
+    .about-title{ font-size: clamp(28px, 3.4vw, 40px); line-height: 1.2; color: var(--secondary); margin-bottom: 20px; }
+    .about-text{ color: var(--gray); line-height: 1.7; margin-bottom: 14px; }
+    .adv-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 56px; }
+    .adv{ background: var(--light); border-radius: var(--radius); padding: 22px; border-top: 3px solid var(--primary); }
+    .adv strong{ display: block; color: var(--secondary); margin-bottom: 6px; }
+    .adv p{ color: var(--gray); font-size: 14px; line-height: 1.5; }
+    .clients-strip{ padding: 60px 0; }
+    .svc-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 64px; }
+    .svc-card{ position: relative; min-height: 280px; border-radius: var(--radius); overflow: hidden; background-size: cover; background-position: center; display: flex; align-items: flex-end; color: #fff; text-decoration: none; box-shadow: var(--shadow); }
+    .svc-card::before{ content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20,33,46,.1) 15%, rgba(20,33,46,.92) 100%); transition: background .3s; }
+    .svc-card:hover::before{ background: linear-gradient(180deg, rgba(0,139,130,.45) 0%, rgba(20,33,46,.95) 100%); }
+    .svc-card > div{ position: relative; padding: 24px; }
+    .svc-card h3{ color: #fff; font-size: 20px; margin-bottom: 8px; }
+    .svc-card p{ font-size: 14px; line-height: 1.5; opacity: .9; }
+    .svc-card span{ display: inline-block; margin-top: 12px; color: #4fd1c5; font-weight: 700; font-size: 13px; letter-spacing: .5px; text-transform: uppercase; }
+    .cta-band{ background: linear-gradient(135deg, var(--primary-dark), var(--secondary)); color: #fff; padding: 56px 0; }
+    .cta-inner{ display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+    .cta-band h2{ color: #fff; font-size: clamp(24px, 3vw, 34px); margin-bottom: 10px; }
+    .cta-band p{ opacity: .9; max-width: 640px; line-height: 1.6; }
+    .cta-btn{ background: #fff; color: var(--secondary); padding: 14px 32px; font-weight: 700; border-radius: 8px; white-space: nowrap; }
+    .cta-btn:hover{ background: var(--light); color: var(--primary-dark); }
+    @media (max-width: 1024px){
+      .svc-grid{ grid-template-columns: repeat(2, 1fr); }
+      .adv-grid{ grid-template-columns: repeat(2, 1fr); }
+      .footer-content{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px){
+      .header-content{ flex-direction: row !important; flex-wrap: wrap; justify-content: space-between; align-items: center; }
+      .logo{ flex: 1; min-width: 0; }
+      .nav-toggle{ display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; background: none; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+      .nav-toggle span{ display: block; height: 2px; background: var(--secondary); border-radius: 2px; }
+      nav{ display: none; width: 100%; }
+      header.nav-open nav{ display: block; }
+      nav ul{ flex-direction: column !important; flex-wrap: nowrap !important; overflow: visible !important; gap: 0 !important; align-items: stretch !important; padding: 6px 0 4px !important; }
+      nav li{ width: 100%; }
+      nav a, nav a.dropdown-toggle{ display: block; padding: 12px 4px !important; font-size: 14px !important; border: none !important; border-bottom: 1px solid var(--gray-light) !important; border-radius: 0 !important; background: none !important; box-shadow: none !important; }
+      nav a.btn-primary{ text-align: center; margin-top: 12px; border-radius: 8px !important; border: none !important; background: var(--primary) !important; color: #fff !important; }
+      .dropdown-toggle::after{ display: none !important; }
+      .hero-slider{ height: 480px; min-height: 0; }
+      .slide-content{ padding: 0 22px; }
+      .slide::before{ background: rgba(20,33,46,.72); }
+      .slider-arrow{ display: none; }
+      .about-grid{ grid-template-columns: 1fr; gap: 28px; }
+      .about-img{ height: 260px; }
+      .adv-grid{ margin-top: 36px; }
+      .svc-grid{ grid-template-columns: 1fr; }
+      .svc-card{ min-height: 220px; }
+      .footer-content{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px){ .adv-grid{ grid-template-columns: 1fr; } }
+
   </style>
 </head>
 
@@ -656,6 +729,7 @@
               <p>Infinite Solutions | Trusted Engineering</p>
             </div>
           </div>
+          <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
           <nav>
             <ul>
               <li><a href="#home">Home</a></li>
@@ -689,109 +763,140 @@
   </header>
 
   <main>
-    <section class="hero hero-media" id="home">
-      <div class="hero-banner">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="./assets/banner-poster.jpg" width="1600" height="800" aria-label="ELECSOL Engineering Services banner">
-          <source src="./assets/banner.mp4" type="video/mp4">
-        </video>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary hero-btn">Get a Quote</a>
-          <a href="#services" class="btn hero-btn hero-btn-secondary">Our Services</a>
-          <a href="./company-profile.pdf" target="_blank" rel="noopener" class="btn btn-outline hero-btn">Company Profile</a>
+    <section class="hero-slider" id="home" aria-label="Highlights">
+      <div class="slide active" style="background-image: url('./assets/slide-solar.jpg');">
+        <div class="slide-content">
+          <div class="slide-kicker">ELECSOL Engineering Services</div>
+          <h2>Solar Energy Solutions</h2>
+          <p>Design, installation and maintenance of hybrid and grid-tied solar systems for homes, businesses and industry.</p>
+          <div class="slide-actions">
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+            <a href="./company-profile.pdf" target="_blank" rel="noopener" class="btn btn-light-outline">Company Profile</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('./assets/slide-control.jpg');">
+        <div class="slide-content">
+          <div class="slide-kicker">Electrical &amp; Automation</div>
+          <h2>Control Systems &amp; Distribution Boards</h2>
+          <p>PLC, automation panels and DB equipment built, installed and commissioned by our engineering team.</p>
+          <div class="slide-actions">
+            <a href="#services" class="btn btn-primary">Our Services</a>
+            <a href="#contact" class="btn btn-light-outline">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+      <div class="slide" style="background-image: url('./assets/fire-pumps-1200-1080x400.jpg');">
+        <div class="slide-content">
+          <div class="slide-kicker">Mechanical &amp; Industrial</div>
+          <h2>Motors, Pumps &amp; Blowers</h2>
+          <p>Overhauling, maintenance and supply of industrial motors, pumps and blowers.</p>
+          <div class="slide-actions">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-light-outline">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+      <button class="slider-arrow prev" type="button" aria-label="Previous slide">&#8249;</button>
+      <button class="slider-arrow next" type="button" aria-label="Next slide">&#8250;</button>
+      <div class="slider-dots"></div>
+    </section>
+
+    <section class="section about-split" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <img src="./assets/about-site-survey.jpg" alt="ELECSOL engineers reviewing drawings during a site survey" class="about-img" loading="lazy">
+          <div>
+            <div class="eyebrow">About Us</div>
+            <h2 class="about-title">Engineering Solutions You Can Trust</h2>
+            <p class="about-text">ELECSOL ENGINEERING SERVICES is a leading provider of comprehensive engineering solutions specializing in electrical systems, solar power, mechanical engineering, and utility infrastructure.</p>
+            <p class="about-text">With years of experience serving industrial and commercial clients, we have built a reputation for delivering quality projects on time and within budget while maintaining the highest safety standards.</p>
+            <p class="about-text">Our team of certified engineers brings expertise across multiple disciplines, ensuring integrated solutions that meet the complex needs of modern industries.</p>
+            <div id="elecsol-company-profile" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px;">
+              <a href="./company-profile.pdf" target="_blank" rel="noopener" class="btn btn-primary">View Company Profile 2026</a>
+              <a href="./company-profile.pdf" download="ELECSOL-Company-Profile-2026.pdf" class="btn btn-outline">Download PDF</a>
+            </div>
+          </div>
+        </div>
+        <div class="adv-grid">
+          <div class="adv"><strong>Certified Engineers</strong><p>Professional engineering team with industry certifications</p></div>
+          <div class="adv"><strong>Senior Industrial Leadership</strong><p>Experienced leadership with decades of industry expertise</p></div>
+          <div class="adv"><strong>Specialized Utilities Oversight</strong><p>Expert management of utility systems and power infrastructure</p></div>
+          <div class="adv"><strong>Dedicated Support</strong><p>24/7 technical support and preventive maintenance services</p></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section clients-strip" style="background: var(--light);">
       <div class="container">
-        <h2 class="section-title">Why Choose ELECSOL</h2>
-        <p class="section-subtitle">
-          Your trusted partner for engineering excellence and sustainable solutions
-        </p>
-
-        <div class="grid grid-3">
-          <div class="card" style="text-align: center; padding: 30px;">
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-              <span style="font-size: 28px; color: white;">⚡</span>
-            </div>
-            <h3 style="color: var(--primary); margin-bottom: 15px;">Expert Engineering</h3>
-            <p style="color: var(--gray); line-height: 1.6;">Certified engineers with decades of experience in electrical and mechanical systems.</p>
-          </div>
-          <div class="card" style="text-align: center; padding: 30px;">
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--accent), #2980b9); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-              <span style="font-size: 28px; color: white;">☀️</span>
-            </div>
-            <h3 style="color: var(--accent); margin-bottom: 15px;">Solar Solutions</h3>
-            <p style="color: var(--gray); line-height: 1.6;">Complete solar energy systems from design to installation and maintenance.</p>
-          </div>
-          <div class="card" style="text-align: center; padding: 30px;">
-            <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--secondary), #34495e); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-              <span style="font-size: 28px; color: white;">🔧</span>
-            </div>
-            <h3 style="color: var(--secondary); margin-bottom: 15px;">Quality Service</h3>
-            <p style="color: var(--gray); line-height: 1.6;">Committed to excellence in every project with guaranteed satisfaction.</p>
-          </div>
+        <div style="text-align: center; margin-bottom: 40px;">
+          <h2 style="font-size: 28px; font-weight: 700; color: var(--secondary); margin-bottom: 15px;">Trusted by Leading Organizations</h2>
+          <p style="color: var(--gray);">Proud partners in engineering excellence</p>
         </div>
 
-        <div class="grid grid-2" style="margin-top: 40px;">
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-bottom: 20px; color: var(--primary);">Our Advantages</h3>
-              <div style="display: grid; gap: 15px;">
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Certified Engineers</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Professional engineering team with industry certifications</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Senior Industrial Leadership</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Experienced leadership with decades of industry expertise</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Specialized Utilities Oversight</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">Expert management of utility systems and power infrastructure</p>
-                  </div>
-                </div>
-                <div style="display: flex; align-items: center; gap: 15px;">
-                  <div style="width: 30px; height: 30px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">✓</div>
-                  <div>
-                    <strong>Dedicated Support</strong>
-                    <p style="margin: 5px 0 0; color: var(--gray); font-size: 14px;">24/7 technical support and preventive maintenance services</p>
-                  </div>
-                </div>
+        <div style="position: relative; overflow: hidden; padding: 40px 0;">
+          <div class="logo-slider" style="display: flex; animation: slide 15s linear infinite; width: fit-content;">
+            <!-- First set of logos -->
+            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
+              <div style="text-align: center;">
+                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/uaf-logo.png" alt="University of Agriculture Faisalabad" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">UAF Faisalabad</p>
               </div>
             </div>
-          </div>
-
-          <div class="card">
-            <div class="card-body">
-              <h3 style="margin-bottom: 20px; color: var(--primary);">About ELECSOL</h3>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 15px;">
-                ELECSOL ENGINEERING SERVICES is a leading provider of comprehensive engineering solutions 
-                specializing in electrical systems, solar power, mechanical engineering, and utility infrastructure.
-              </p>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 15px;">
-                With years of experience serving industrial and commercial clients, we have built a reputation 
-                for delivering quality projects on time and within budget while maintaining the highest safety standards.
-              </p>
-              <p style="color: var(--gray); line-height: 1.6; margin-bottom: 20px;">
-                Our team of certified engineers brings expertise across multiple disciplines, ensuring 
-                integrated solutions that meet the complex needs of modern industries.
-              </p>
-              <div id="elecsol-company-profile" style="display: flex; gap: 12px; flex-wrap: wrap;">
-                <a href="./company-profile.pdf" target="_blank" rel="noopener" class="btn btn-primary">View Company Profile 2026</a>
-                <a href="./company-profile.pdf" download="ELECSOL-Company-Profile-2026.pdf" class="btn btn-outline">Download PDF</a>
+            <!-- Duplicate set for seamless loop -->
+            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
+              <div style="text-align: center;">
+                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
+              </div>
+              <div style="text-align: center;">
+                <img src="./assets/uaf-logo.png" alt="University of Agriculture Faisalabad" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
+                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">UAF Faisalabad</p>
               </div>
             </div>
           </div>
         </div>
+
+        <style>
+          @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          
+          .logo-slider:hover img {
+            filter: grayscale(0%) !important;
+            opacity: 1 !important;
+            transform: scale(1.1);
+          }
+        </style>
       </div>
     </section>
 
@@ -801,6 +906,15 @@
         <p class="section-subtitle">
           Complete engineering solutions from solar energy to scientific equipment and specialized consulting
         </p>
+
+        <div class="svc-grid">
+          <a href="#solar" class="svc-card" style="background-image: url('./assets/svc-solar.jpg');"><div><h3>Solar Energy Solutions</h3><p>Inverter configuration, net metering, installation and maintenance.</p><span>Learn more &rarr;</span></div></a>
+          <a href="#mechanical" class="svc-card" style="background-image: url('./assets/svc-mechanical.jpg');"><div><h3>Mechanical Fabrication</h3><p>Custom metal works and structural steel fabrication and assembly.</p><span>Learn more &rarr;</span></div></a>
+          <a href="#scientific" class="svc-card" style="background-image: url('./assets/svc-scientific.jpg');"><div><h3>Scientific Equipment</h3><p>Laboratory instruments, microscopes and consumables.</p><span>Learn more &rarr;</span></div></a>
+          <a href="#control" class="svc-card" style="background-image: url('./assets/svc-control.jpg');"><div><h3>Control Systems &amp; DB</h3><p>PLC, SCADA, automation panels and distribution boards.</p><span>Learn more &rarr;</span></div></a>
+          <a href="#motors" class="svc-card" style="background-image: url('./assets/svc-motors.jpg');"><div><h3>Motors &amp; Pumps</h3><p>Rewinding, overhauling and industrial pump and blower maintenance.</p><span>Learn more &rarr;</span></div></a>
+          <a href="#consulting" class="svc-card" style="background-image: url('./assets/svc-consulting.jpg');"><div><h3>Consulting Services</h3><p>Site surveys, energy audits and technical consultancy.</p><span>Learn more &rarr;</span></div></a>
+        </div>
 
         <!-- Solar Services -->
         <div style="margin-bottom: 20px;" id="solar">
@@ -1248,79 +1362,6 @@
       </div>
     </section>
 
-    <section class="section" style="background: var(--white);">
-      <div class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-          <h2 style="font-size: 28px; font-weight: 700; color: var(--secondary); margin-bottom: 15px;">Trusted by Leading Organizations</h2>
-          <p style="color: var(--gray);">Proud partners in engineering excellence</p>
-        </div>
-
-        <div style="position: relative; overflow: hidden; padding: 40px 0;">
-          <div class="logo-slider" style="display: flex; animation: slide 15s linear infinite; width: fit-content;">
-            <!-- First set of logos -->
-            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
-              <div style="text-align: center;">
-                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/uaf-logo.png" alt="University of Agriculture Faisalabad" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">UAF Faisalabad</p>
-              </div>
-            </div>
-            <!-- Duplicate set for seamless loop -->
-            <div style="display: flex; align-items: center; gap: 60px; padding: 0 30px;">
-              <div style="text-align: center;">
-                <img src="./assets/uog logo.jpg" alt="University of Gujrat" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">University of Gujrat</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/royal fan logo.jfif" alt="Royal Fan" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Royal Fan</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/forestry logo.jfif" alt="Fisheries Department" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">Fisheries Department</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/GCCI logo.jfif" alt="GCCI" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">GCCI</p>
-              </div>
-              <div style="text-align: center;">
-                <img src="./assets/uaf-logo.png" alt="University of Agriculture Faisalabad" style="height: 60px; object-fit: contain; filter: grayscale(100%); opacity: 0.8; transition: all 0.3s ease;">
-                <p style="margin-top: 10px; color: var(--gray); font-size: 14px;">UAF Faisalabad</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <style>
-          @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          
-          .logo-slider:hover img {
-            filter: grayscale(0%) !important;
-            opacity: 1 !important;
-            transform: scale(1.1);
-          }
-        </style>
-      </div>
-    </section>
-
     <section class="section" id="projects">
       <div class="container">
         <h2 class="section-title">Featured Projects</h2>
@@ -1755,6 +1796,16 @@
       </div>
     </section>
 
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Power Your Business with Reliable Engineering</h2>
+          <p>From solar and electrical systems to motors, pumps and fabrication, talk to our engineers about your next project.</p>
+        </div>
+        <a href="#contact" class="btn cta-btn">Get Started Today</a>
+      </div>
+    </section>
+
     <section class="section" id="contact">
       <div class="container">
         <h2 class="section-title">Request Audit & Quote</h2>
@@ -1856,6 +1907,17 @@
           </div>
         </div>
 
+        <div class="footer-section">
+          <h3>Our Services</h3>
+          <ul>
+            <li><a href="#solar">Solar Energy Solutions</a></li>
+            <li><a href="#mechanical">Mechanical Fabrication</a></li>
+            <li><a href="#scientific">Scientific Equipment</a></li>
+            <li><a href="#control">Control Systems &amp; DB</a></li>
+            <li><a href="#motors">Motors &amp; Pumps</a></li>
+            <li><a href="#consulting">Consulting Services</a></li>
+          </ul>
+        </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
@@ -1972,5 +2034,24 @@
       });
     }
   </script>
+<script>
+(function(){
+  var header=document.querySelector('header'), toggle=document.querySelector('.nav-toggle');
+  if(toggle){
+    toggle.addEventListener('click',function(){var o=header.classList.toggle('nav-open');toggle.setAttribute('aria-expanded',o);});
+    document.querySelectorAll('nav a').forEach(function(a){a.addEventListener('click',function(){header.classList.remove('nav-open');toggle.setAttribute('aria-expanded','false');});});
+  }
+  var slides=[].slice.call(document.querySelectorAll('.slide')), dots=document.querySelector('.slider-dots');
+  if(!slides.length||!dots) return;
+  var i=0, timer;
+  slides.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Slide '+(k+1));b.addEventListener('click',function(){go(k);restart();});dots.appendChild(b);});
+  function go(n){slides[i].classList.remove('active');dots.children[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots.children[i].classList.add('active');}
+  function restart(){clearInterval(timer);timer=setInterval(function(){go(i+1);},6000);}
+  document.querySelector('.slider-arrow.prev').addEventListener('click',function(){go(i-1);restart();});
+  document.querySelector('.slider-arrow.next').addEventListener('click',function(){go(i+1);restart();});
+  go(0); restart();
+})();
+
+</script>
 </body>
 </html>
